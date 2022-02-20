@@ -1,0 +1,36 @@
+.css-1okebmr-indicatorSeparator {
+  display: none;
+}
+
+.form {
+  margin-top: 40px;
+  width: 600px;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__body-box {
+    width: 49%;
+  }
+
+  &__descr {
+    margin-top: 12px !important;
+  }
+
+  &__footer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-left: auto;
+    }
+  }
+}
+
+.error {
+  color: red;
+}

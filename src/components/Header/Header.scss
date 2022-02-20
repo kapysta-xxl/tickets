@@ -1,0 +1,60 @@
+.Header {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    display: inline-flex;
+    align-items: center;
+  }
+  & > * + * {
+    margin-left: 20px;
+    position: relative;
+  }
+
+  &__theme-controls {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      cursor: pointer;
+    }
+
+    & > * + * {
+      margin-left: 12px;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 12px;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
