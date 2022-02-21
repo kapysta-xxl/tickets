@@ -19,7 +19,7 @@ export const MyTicket = styled.div`
   flex-wrap: no-wrap;
   align-items: center;
   flex-direction: row;
-  padding: 8px 10px;
+  padding: 7px 10px;
   max-height: 80px;
 `;
 

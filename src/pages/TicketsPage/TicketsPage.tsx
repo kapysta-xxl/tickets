@@ -96,8 +96,8 @@ const Tickets = () => {
     return (
         <>
         <Header title={'Tickets'} onSearch={search}/>
-            <div className='tickets'>
-            <div className='container'>
+            <FlexBoxGrid height='100%'>
+            <div className='container' style={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
                 <div className='tickets__header' style={themeStyles}>
                     <FlexBoxGrid align='center' gap='0 20px' padding='0 10px'>
                         <h3 className='tickets__title'>All Tickets</h3>
@@ -145,17 +145,14 @@ const Tickets = () => {
                 </FlexBoxGrid>
                 </FlexBoxGrid>
                 { myTickets.length !== 0 && myTickets.map(ticket => {
-                    return (
-                        <div className='tickets-grid__item' key={ticket.ticketId}>
-                            <TicketComponent mode='one' ticket={ticket}/>
-                        </div>
-                    )
+                    return <TicketComponent key={ticket.ticketId} mode='one' ticket={ticket}/>;
                 }) }
                 </FlexBoxGrid>
                 <FlexBoxGrid 
                 justify='flex-end'
                 align='center'
                 gap='0 10px'
+                margin='auto 0 30px 0'
                 >
                     <Pagination
                     size='small' 
@@ -176,7 +173,7 @@ const Tickets = () => {
                     </Select>
                 </FlexBoxGrid>
             </div>
-        </div>
+        </FlexBoxGrid>
         </>
     );
 }

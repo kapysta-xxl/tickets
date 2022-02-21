@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const FlexGrid = styled.div<any>`
+  height: ${({ height }) => height || "auto"};
   width: ${({ width }) => width || "100%"};
   background: ${({ background }) => background || "#fff"};
   display: ${({ display }) => display || "flex"};
