@@ -34,6 +34,7 @@ const Form = () => {
     const { tickets, loading} = useSelector((state: RootState) => state.tickets)
 
     const editTicket = useMemo(() => tickets.find(n => n.ticketId === params.ticketId), [params, tickets])
+    const isMy = useMemo(() => editTicket?.userId !== user?.userId, [user, editTicket])
 
     const { control , reset, register, setValue, getValues, handleSubmit, formState: { errors }, clearErrors } = useForm({
         defaultValues: {
@@ -106,6 +107,7 @@ const Form = () => {
         className='form'
         onSubmit={handleSubmit(params.ticketId ? edit : create, onErrors)}
         >
+        <fieldset disabled={isMy} style={{ border: 'none' }}>
         <div className='form__body'>
         <div className='form__body-box'>
         <TextField
@@ -157,16 +159,22 @@ const Form = () => {
         {
                 <div className='form__footer'>
                 <Button 
-                
+                style={{ display: isMy ? 'none' : 'block'}}
                 variant="contained" 
                 disabled={editTicket?.status !== 'progress'}
                 onClick={completedHandler}
                 >
                 COMPLETED
                 </Button>
-                <Button type='submit' variant="contained">{editTicket ? 'UPDATE' : 'CREATE'}</Button>
+                <Button 
+                disabled={isMy}
+                type='submit' 
+                variant="contained"
+                >
+                    {editTicket ? 'UPDATE' : 'CREATE'}
+                </Button>
             </div>}
-
+        </fieldset>
         </form>
     );
 }

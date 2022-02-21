@@ -22,9 +22,9 @@ const DeleteButton: FC<IDeleteButton>= ({ clickHandler }) =>  {
 
     return !open ? 
     <DeleteIcon onClick={() => setOpen(!open)} style={{ cursor: 'pointer' }}/> : 
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-        <DoneIcon onClick={done} style={{ cursor: 'pointer' }}/>
-        <CloseIcon onClick={close} style={{ cursor: 'pointer' }}/>
+    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+        <DoneIcon onClick={done}/>
+        <CloseIcon onClick={close}/>
     </div>
 }
 
