@@ -33,9 +33,9 @@ const TicketComponent: FC<ITicket> = ({ ticket, mode }) => {
         return <span>{d.getDate()} / {d.getMonth()} / {d.getFullYear()}</span>
     }, [ticket])
 
-    const deleteHandler = () => {
+    const deleteHandler = useCallback(() => {
         dispatch(deleteTicketAction(ticket.ticketId, ticket.title))
-    }
+    } , [])
     
     const completed = ticket.status === 'completed'
     
